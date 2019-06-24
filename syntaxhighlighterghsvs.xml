@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="editors-xtd" method="upgrade">
+	<name>PLG_EDITORS-XTD_SYNTAXHIGHLIGHTERGHSVS</name>
+	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer</author>
+	<creationDate>2019-06-20</creationDate>
+	<copyright>Copyright (C) 2019, G@HService Berlin Neukölln, Volkmar Volli Schlothauer (ghsvs.de). All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt file</license>
+	<authorEmail></authorEmail>
+	<authorUrl>https://www.ghsvs.de</authorUrl>
+	<version>2019.06.25</version>
+	<description>PLG_EDITORS-XTD_SYNTAXHIGHLIGHTERGHSVS_XML_DESC</description>
+	<versionHistory>
+		https://updates.ghsvs.de/changelog.php?file=syntaxhighlighterghsvs_xtd
+	</versionHistory>
+	
+	<updateservers><server type="extension" priority="1" name="PLG_EDITORS-XTD_SYNTAXHIGHLIGHTERGHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/syntaxhighlighterghsvs_xtd-update.xml</server></updateservers>
+
+	<changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/syntaxhighlighterghsvs_xtd-changelog.xml</changelogurl>
+
+	<scriptfile>installerScript.php</scriptfile>
+	<!--<minimumPhp>7.0.0</minimumPhp>-->
+	<!-- <maximumPhp>5.4.0</maximumPhp> -->
+	<minimumJoomla>3.9.0</minimumJoomla>
+	<!--<maximumJoomla>3.9.99999</maximumJoomla>-->
+	<allowDowngrades>1</allowDowngrades>
+
+	<files>
+		<filename plugin="syntaxhighlighterghsvs">syntaxhighlighterghsvs.php</filename>
+		<folder>language</folder>
+		<filename>installerScript.php</filename>
+		<filename>LICENSE.txt</filename>
+	</files>
+
+	<media destination="plg_editors-xtd_syntaxhighlighterghsvs" folder="media">
+		<folder>html</folder>
+		<folder>js</folder>
+	</media>
+
+	<config />
+
+</extension>

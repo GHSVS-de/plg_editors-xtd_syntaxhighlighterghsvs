@@ -10,7 +10,7 @@
 	<version>2019.06.25</version>
 	<description>PLG_EDITORS-XTD_SYNTAXHIGHLIGHTERGHSVS_XML_DESC</description>
 	<versionHistory>
-		https://updates.ghsvs.de/changelog.php?file=syntaxhighlighterghsvs_xtd
+		https://updates.ghsvs.de/changelog.php?file=syntaxhighlighterghsvs_xtd&element=syntaxhighlighterghsvs
 	</versionHistory>
 	
 	<updateservers><server type="extension" priority="1" name="PLG_EDITORS-XTD_SYNTAXHIGHLIGHTERGHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/syntaxhighlighterghsvs_xtd-update.xml</server></updateservers>

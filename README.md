@@ -12,7 +12,7 @@ Changelogs: https://updates.ghsvs.de/changelog.php?file=syntaxhighlighterghsvs_x
 - - Never ever delete the file `insertcode_tmpl.html` inside that directory.
 
 ## Usage
-- After installation and activation of this plugin you have a button named "Syntax Highlight".
+- After installation and activation of this plugin you have a button named "Syntax Highlight" below the editor (JCE) or inside the toolbar (TinyMCE).
 - Click it and a popup opens with a form with some fields. Make your settings/entries.
 - Click the "Insert Code" button below the form after you have made your settings. Sometimes you have to scroll down a bit to see that button.
 - - Danger of confusion: Joomla 4 shows an additional button "Close" that cancels the input and closes the popup.

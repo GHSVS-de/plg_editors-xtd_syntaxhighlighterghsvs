@@ -45,16 +45,16 @@
 			formData.codeInput = formData.codeInput.replace(/</g, '&lt;');
 			formData.codeInput = formData.codeInput.replace(/>/g, '&gt;');
 
+			formData.title = formData.title.replace(/&/g, '&amp;');
+			formData.title = formData.title.replace(/\"/g, '&quot;');
+			formData.title = formData.title.replace(/\'/g, '&#039;');
+			formData.title = formData.title.replace(/</g, '&lt;');
+			formData.title = formData.title.replace(/>/g, '&gt;');
+			formData.title = formData.title.trim();
+
 			if (!formData.selectBrush)
 			{
 				formData.selectBrush = "text";
-			}
-
-			formData.textLines = formData.textLines.replace(/\s+/gm, '');
-
-			if (formData.textLines)
-			{
-				formData.textLines = "; highlight:[" + formData.textLines + "]";
 			}
 
 			formData.firstLine = formData.firstLine.trim();
@@ -63,15 +63,51 @@
 			{
 				formData.firstLine = "";
 			}
-			else
+
+			formData.textLines = formData.textLines.replace(/\s+/gm, '');
+
+			if (formData.textLines)
+			{
+				if (formData.firstLine)
+				{
+					var textLinesArray = formData.textLines.split(",");
+					var textlines = [];
+
+					for (var i = 0; i < textLinesArray.length; i++)
+					{
+						if (!isNaN(textLinesArray[i]))
+						{
+							textlines.push(parseInt(textLinesArray[i]) + parseInt(formData.firstLine) - 1);
+						}
+					}
+
+					if (textlines.length)
+					{
+						formData.textLines = "; highlight:[" + textlines.join(",") + "]";
+					}
+				}
+				else
+				{
+					formData.textLines = "; highlight:[" + formData.textLines + "]";
+				}
+			}
+
+			if (formData.firstLine)
 			{
 				formData.firstLine = "; first-line:" + formData.firstLine;
+			}
+
+			if (formData.title)
+			{
+				formData.title = "; title:'" + formData.title + "'";
 			}
 
 			tag = '<pre class="brush:'
 				+ formData.selectBrush
 				+ formData.textLines
-				+ formData.firstLine + '">' + formData.codeInput + '</pre><p>&nbsp;</p>';
+				+ formData.firstLine
+				+ formData.title
+				+ '">' + formData.codeInput + '</pre><p>&nbsp;</p>';
 
 			/** Use the API, if editor supports it **/
 			if (window.parent.Joomla && window.parent.Joomla.editors && window.parent.Joomla.editors.instances && window.parent.Joomla.editors.instances.hasOwnProperty(editor))

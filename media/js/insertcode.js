@@ -52,6 +52,13 @@
 			formData.title = formData.title.replace(/>/g, '&gt;');
 			formData.title = formData.title.trim();
 
+			formData.ariaLabel = formData.ariaLabel.replace(/&/g, '&amp;');
+			formData.ariaLabel = formData.ariaLabel.replace(/\"/g, '&quot;');
+			formData.ariaLabel = formData.ariaLabel.replace(/\'/g, '&#039;');
+			formData.ariaLabel = formData.ariaLabel.replace(/</g, '&lt;');
+			formData.ariaLabel = formData.ariaLabel.replace(/>/g, '&gt;');
+			formData.ariaLabel = formData.ariaLabel.trim();
+
 			if (!formData.selectBrush)
 			{
 				formData.selectBrush = "text";
@@ -101,13 +108,16 @@
 			{
 				formData.title = "; title:'" + formData.title + "'";
 			}
-
-			tag = '<pre class="brush:'
+			if (formData.ariaLabel)
+			{
+				formData.ariaLabel = " aria-label='" + formData.ariaLabel + "'";
+			}
+			tag = '<div class="codeContainer"' + formData.ariaLabel + '><pre class="brush:'
 				+ formData.selectBrush
 				+ formData.textLines
 				+ formData.firstLine
 				+ formData.title
-				+ '">' + formData.codeInput + '</pre><p>&nbsp;</p>';
+				+ '">' + formData.codeInput + '</pre></div><p>&nbsp;</p>';
 
 			/** Use the API, if editor supports it **/
 			if (window.parent.Joomla && window.parent.Joomla.editors && window.parent.Joomla.editors.instances && window.parent.Joomla.editors.instances.hasOwnProperty(editor))

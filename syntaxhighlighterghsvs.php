@@ -13,7 +13,8 @@ class plgButtonSyntaxhighlighterGhsvs extends CMSPlugin
 
 	function onDisplay($editorname, $asset, $author)
 	{
-		if (!$this->app->isClient('administrator')) {
+		if (!$this->app->isClient('administrator'))
+		{
 			return false;
 		}
 
@@ -91,7 +92,7 @@ class plgButtonSyntaxhighlighterGhsvs extends CMSPlugin
 
 		$replaceWith = array(
 			'PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_HEADLINE' => Text::_('PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_HEADLINE'),
-			'WARNING' => '<p><strong style="color:red">' . Text::_($warning) . '</strong></p>',
+			'WARNING' => $warning ? '<p><strong style="color:red">' . Text::_($warning) . '</strong></p>' : '',
 			'PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_SELECTBRUSH' => Text::_('PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_SELECTBRUSH'),
 			'BRUSHOPTIONS' => $brushOptions,
 			'PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_CODEINPUT' => Text::_('PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_CODEINPUT'),

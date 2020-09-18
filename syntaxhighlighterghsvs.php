@@ -101,6 +101,7 @@ class plgButtonSyntaxhighlighterGhsvs extends CMSPlugin
 			'PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_INSERTCODE' => Text::_('PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_INSERTCODE'),
 			'PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_TITLE' => Text::_('PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_TITLE'),
 			'PLG_XTD_SYNTAXHIGHLIGHTERGHSVS_MINIFIED_JS' => JDEBUG ? '' : '.min',
+			'[VERSION]' => '?' . time(),
 		);
 
 		foreach ($replaceWith as $replace => $with)
